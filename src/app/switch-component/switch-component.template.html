@@ -1,0 +1,36 @@
+<label
+  [id]="id"
+  class="switch"
+>
+  <input
+    role="switch"
+    type="checkbox"
+    (change)="onChecked()"
+    [disabled]="disabled"
+    [attr.aria-checked]="value"
+  >
+  <span
+    class="slider"
+  >
+    <span
+      *ngIf="value && showIcons"
+      class="span__cell"
+    >
+      <img
+        class="switch__icon"
+        src="assets/toggleOn.svg"
+        alt=""
+      >
+    </span>
+    <span
+      *ngIf="!value && showIcons"
+      class="span__cell_last"
+    >
+      <img
+        class="switch__icon switch__icon_off"
+        src="assets/toggleOff.svg"
+        alt=""
+      >
+    </span>
+  </span>
+</label>
