@@ -1,6 +1,9 @@
 <label
   [id]="id"
   class="switch"
+  [class.m-size]="size === 'm'"
+  [class.l-size]="size === 'l'"
+  *ngIf="form === 'm3'"
 >
   <input
     role="switch"
@@ -8,9 +11,15 @@
     (change)="onChecked()"
     [disabled]="disabled"
     [attr.aria-checked]="value"
+    [checked]="value"
   >
   <span
     class="slider"
+    [class.m-size]="size === 'm'"
+    [class.l-size]="size === 'l'"
+    [ngStyle]="{
+      'background-color': value ? this.turnOnColor : this.turnOffColor,
+    }"
   >
     <span
       *ngIf="value && showIcons"
@@ -18,7 +27,7 @@
     >
       <img
         class="switch__icon"
-        src="assets/toggleOn.svg"
+        [src]="iconOn"
         alt=""
       >
     </span>
@@ -28,9 +37,26 @@
     >
       <img
         class="switch__icon switch__icon_off"
-        src="assets/toggleOff.svg"
+        [src]="iconOff"
         alt=""
       >
     </span>
   </span>
+</label>
+
+<label
+  *ngIf="form === 'm2'"
+  class="toggle-m2"
+  [class.m-size]="size === 'm'"
+  [class.l-size]="size === 'l'"
+>
+  <input
+    type="checkbox"
+    role="switch"
+    (change)="onChecked()"
+    [disabled]="disabled"
+    [attr.aria-checked]="value"
+    [checked]="value"
+  >
+  <span></span>
 </label>

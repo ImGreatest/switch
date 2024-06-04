@@ -20,10 +20,7 @@ import { SWITCH_DEFAULT_OPTIONS, SwitchOptions } from "./switch-component.option
 })
 export class SwitchComponent {
   @Input()
-  id: string | null = '';
-
-  @Input()
-  singleColor: boolean = this.options.singleColor;
+  id: string | null = null;
 
   @Input()
   showIcons: boolean = this.options.showIcons;
@@ -42,6 +39,18 @@ export class SwitchComponent {
   @HostBinding('attr.data-form_type')
   formType: string = this.options.formType;
 
+  @Input()
+  iconChecked: string = this.options.icons.stateOn;
+
+  @Input()
+  iconUnChecked: string = this.options.icons.stateOff;
+
+  @Input()
+  appearanceTurnOn: string = this.options.appearances.checked;
+
+  @Input()
+  appearanceTurnOff: string = this.options.appearances.unchecked;
+
   constructor(
     @Inject(ChangeDetectorRef) cdr: ChangeDetectorRef,
     @Inject(SWITCH_DEFAULT_OPTIONS)
@@ -49,11 +58,27 @@ export class SwitchComponent {
   ) {}
 
   get iconOn(): string {
-    return this.options.icons.stateOn;
+    return 'assets/' + this.iconChecked + '.svg';
   }
 
   get iconOff(): string {
-    return this.options.icons.stateOff;
+    return 'assets/' + this.iconUnChecked + '.svg';
+  }
+
+  get appearances() {
+    return this.options.appearances;
+  }
+
+  get turnOnColor(): string {
+    return this.appearanceTurnOn;
+  }
+
+  get turnOffColor(): string {
+    return this.appearanceTurnOff;
+  }
+
+  get form(): string {
+    return this.formType;
   }
 
   get sizeM(): boolean {
