@@ -1,5 +1,5 @@
 {
-  "name": "switch",
+  "name": "switch-component-multi",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
@@ -12,7 +12,6 @@
     "switch:watch": "ng build switch --watch",
     "switch:publish": "npm run switch:build && cd dist/switch && npm pack && npm publish"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^18.0.0",
     "@angular/common": "^18.0.0",
