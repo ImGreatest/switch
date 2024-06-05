@@ -1,0 +1,18 @@
+include:
+  - project: 'devops/pipelines/stages'
+    file: 'stages.gitlab-ci.yml'
+    ref: main
+  - project: 'devops/pipelines/build_npm'
+    file: 'build_npm.gitlab-ci.yml'
+    ref: main
+  - project: 'devops/pipelines/publish_nexus'
+    file: 'publish-nexus.gitlab-ci.yml'
+    ref: master
+
+Build:
+  extends:
+    - .build-npm
+
+Publish to nexus:
+  extends:
+    - .node-publish-nexus

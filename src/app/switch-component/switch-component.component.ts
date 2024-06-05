@@ -11,7 +11,7 @@ import { SizeL } from "./const";
 import { SWITCH_DEFAULT_OPTIONS, SwitchOptions } from "./switch-component.options";
 
 @Component({
-  selector: 'switch-component',
+  selector: 'switch',
   templateUrl: './switch-component.template.html',
   styleUrl: './switch-component.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

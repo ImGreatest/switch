@@ -1,6 +1,6 @@
 {
-  "name": "switch-component-multi",
-  "version": "0.0.3",
+  "name": "@multiplatform/switch",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
