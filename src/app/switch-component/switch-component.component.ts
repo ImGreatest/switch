@@ -20,36 +20,36 @@ import { SWITCH_DEFAULT_OPTIONS, SwitchOptions } from "./switch-component.option
 })
 export class SwitchComponent {
   @Input()
-  id: string | null = null;
+  public id: string | null = null;
 
   @Input()
-  showIcons: boolean = this.options.showIcons;
+  public showIcons: boolean = this.options.showIcons;
 
   @Input()
   @HostBinding('attr.data-size')
-  size: SizeL = this.options.size;
+  public size: SizeL = this.options.size;
 
   @Input()
-  disabled: boolean | null = false;
+  public disabled: boolean | null = false;
 
   @Input()
-  value: boolean | null = false;
+  public value: boolean | null = false;
 
   @Input()
   @HostBinding('attr.data-form_type')
-  formType: string = this.options.formType;
+  public formType: string = this.options.formType;
 
   @Input()
-  iconChecked: string = this.options.icons.stateOn;
+  public iconChecked: string = this.options.icons.stateOn;
 
   @Input()
-  iconUnChecked: string = this.options.icons.stateOff;
+  public iconUnChecked: string = this.options.icons.stateOff;
 
   @Input()
-  appearanceTurnOn: string = this.options.appearances.checked;
+  public appearanceTurnOn: string = this.options.appearances.checked;
 
   @Input()
-  appearanceTurnOff: string = this.options.appearances.unchecked;
+  public appearanceTurnOff: string = this.options.appearances.unchecked;
 
   constructor(
     @Inject(ChangeDetectorRef) cdr: ChangeDetectorRef,
@@ -57,35 +57,35 @@ export class SwitchComponent {
     readonly options: SwitchOptions
   ) {}
 
-  public get _iconOn(): string {
+  protected get _iconOn(): string {
     return 'assets/' + this.iconChecked + '.svg';
   }
 
-  public get _iconOff(): string {
+  protected get _iconOff(): string {
     return 'assets/' + this.iconUnChecked + '.svg';
   }
 
-  public get _appearances() {
+  protected get _appearances() {
     return this.options.appearances;
   }
 
-  public get _turnOnColor(): string {
+  protected get _turnOnColor(): string {
     return this.appearanceTurnOn;
   }
 
-  public get _turnOffColor(): string {
+  protected get _turnOffColor(): string {
     return this.appearanceTurnOff;
   }
 
-  public get _form(): string {
+  protected get _form(): string {
     return this.formType;
   }
 
-  public get _sizeM(): boolean {
+  protected get _sizeM(): boolean {
     return this.options.size === 'm'
   }
 
-  onChecked(): void {
+  protected onChecked(): void {
     this.value = !this.value;
   }
 }
