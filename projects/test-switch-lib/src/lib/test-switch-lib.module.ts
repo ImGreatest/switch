@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { TestSwitchLibComponent } from "./test-switch-lib.component";
 import { SWITCH_DEFAULT_OPTIONS } from "./test-switch-lib.options";
