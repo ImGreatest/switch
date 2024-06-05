@@ -17,9 +17,7 @@
     class="slider"
     [class.m-size]="size === 'm'"
     [class.l-size]="size === 'l'"
-    [ngStyle]="{
-      'background-color': value ? this._turnOnColor : this._turnOffColor,
-    }"
+    [style.background-color]="value ? this._turnOnColor : this._turnOffColor"
   >
     <span
       *ngIf="value && showIcons"

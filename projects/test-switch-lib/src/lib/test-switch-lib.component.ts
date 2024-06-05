@@ -7,18 +7,18 @@ import {
   Input,
   ViewEncapsulation
 } from '@angular/core';
-import { SizeL } from "./const";
-import { SWITCH_DEFAULT_OPTIONS, SwitchOptions } from "./switch-component.options";
+import { SizeL } from "../lib/const/index";
+import { SwitchOptions, SWITCH_DEFAULT_OPTIONS } from  "./test-switch-lib.options";
 
 @Component({
-  selector: 'switch-component',
-  templateUrl: './switch-component.template.html',
-  styleUrl: './switch-component.component.scss',
+  selector: 'lib-test-switch-lib',
+  templateUrl: './test-switch-lib.template.html',
+  styleUrls: ['./test-switch-lib.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.Emulated,
   host: { '[checked._checked]': 'value' },
 })
-export class SwitchComponent {
+export class TestSwitchLibComponent {
   @Input()
   id: string | null = null;
 

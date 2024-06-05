@@ -1,11 +1,12 @@
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { SwitchComponent } from "./switch-component.component";
-import { SWITCH_DEFAULT_OPTIONS } from "./switch-component.options";
 import { BrowserModule } from "@angular/platform-browser";
+import { SWITCH_DEFAULT_OPTIONS } from "./switch-component.options";
 
 @NgModule({
   imports: [BrowserModule, CommonModule, NgOptimizedImage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {
       provide: SWITCH_DEFAULT_OPTIONS,
